@@ -9,8 +9,21 @@ function ProductSize(props) {
     );
 }
 
+
+function ProductNote(props) {
+    const {product} = props;
+    if (!product.note) return;
+
+    return (
+        <div style={{fontSize: "small", color: "blue"}}>
+            {product.note}
+        </div>
+    );
+}
+
 const menuProductStyles = {
-    div: {margin: "2vw", fontSize: "larger", display: "flex"},
+    outerDiv: {margin: "2vw", fontSize: "larger"},
+    mainRowDiv: {display: "flex"},
 };
 
 export function MenuProduct(props) {
@@ -18,12 +31,15 @@ export function MenuProduct(props) {
     if (!product?.name) return;
 
     return (
-        <div style={menuProductStyles.div}>
-            <div style={{flex: 1}}>
-                {product.name}
-                <ProductSize product={product}/>
+        <div style={menuProductStyles.outerDiv}>
+            <div style={menuProductStyles.mainRowDiv}>
+                <div style={{flex: 1}}>
+                    {product.name}
+                    <ProductSize product={product}/>
+                </div>
+                <div style={{flex: 1}}>{product.price} &euro;</div>
             </div>
-            <div style={{flex: 1}}>{product.price} &euro;</div>
+            <ProductNote product={product}/>
         </div>
     );
 }
