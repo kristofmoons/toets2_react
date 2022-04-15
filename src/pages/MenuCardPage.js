@@ -4,7 +4,7 @@ import {MenuCard} from "../components/MenuCard";
 export function MenuCardPage(props) {
     const {products} = props;
     return (
-        <div style={{margin: "0 2vw"}}>
+        <div className="mx-3">
             <MenuCard products={products}/>
         </div>
     );
