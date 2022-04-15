@@ -4,7 +4,9 @@ export function MenuProduct(props) {
 
     const size = product.size && `(${product.size}cl)`;
     return (
-        <div>{product.name} {size} -- {product.price} &euro;</div>
+        <div style={{margin: "2vw", fontSize: "larger"}}>
+            {product.name} {size} -- {product.price} &euro;
+        </div>
     );
 }
 
