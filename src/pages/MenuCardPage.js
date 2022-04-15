@@ -3,7 +3,11 @@ import {MenuCard} from "../components/MenuCard";
 
 export function MenuCardPage(props) {
     const {products} = props;
-    return <MenuCard products={products}/>
+    return (
+        <div style={{margin: "0 2vw"}}>
+            <MenuCard products={products}/>
+        </div>
+    );
 }
 
 

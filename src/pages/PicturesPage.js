@@ -1,3 +1,7 @@
 export function PicturesPage() {
-    return <h1>Pictures</h1>;
+    return (
+        <div style={{margin: "0 2vw"}}>
+            <h1>Pictures</h1>
+        </div>
+    );
 }
