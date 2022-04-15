@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function ProductSize(props) {
     const {product} = props;
     if (!product.size) return;
@@ -44,3 +46,13 @@ export function MenuProduct(props) {
     );
 }
 
+
+MenuProduct.propTypes = {
+    product: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        size: PropTypes.number,
+        note: PropTypes.string,
+    }).isRequired,
+
+}
