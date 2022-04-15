@@ -1,4 +1,5 @@
 import {MenuProduct} from "./MenuProduct";
+import PropTypes from "prop-types";
 
 export function MenuCard(props) {
     const {products} = props;
@@ -8,4 +9,8 @@ export function MenuCard(props) {
             {products.map(p => <MenuProduct key={p.name} product={p}/>)}
         </div>
     );
+}
+
+MenuCard.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object).isRequired
 }
