@@ -1,15 +1,25 @@
 import 'normalize.css';
+import 'react-tabs/style/react-tabs.css';
 import './App.css';
 import {PRODUCTS_DATA} from "./data/data";
 import {MenuCardPage} from "./pages/MenuCardPage";
 import {PicturesPage} from "./pages/PicturesPage";
+import {Tabs, TabList, Tab, TabPanel} from "react-tabs";
 
 function App() {
     return (
-        <>
-            <MenuCardPage products={PRODUCTS_DATA}/>
-            <PicturesPage/>
-        </>
+        <Tabs>
+            <TabList>
+                <Tab>menu</Tab>
+                <Tab>pics</Tab>
+            </TabList>
+            <TabPanel>
+                <MenuCardPage products={PRODUCTS_DATA}/>
+            </TabPanel>
+            <TabPanel>
+                <PicturesPage/>
+            </TabPanel>
+        </Tabs>
     );
 }
 
