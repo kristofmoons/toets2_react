@@ -1,4 +1,5 @@
 import 'normalize.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-tabs/style/react-tabs.css';
 import './App.css';
 import {PRODUCTS_DATA} from "./data/data";
