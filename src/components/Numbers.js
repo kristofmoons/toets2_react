@@ -13,9 +13,9 @@ function Number(props) {
 export function Numbers(props) {
     const {numbers, title} = props
     return (
-        <Section
-            title={title}
-            content={numbers.map((n, i) => <Number key={i} n={n}/>)}/>
+        <Section title={title}>
+            {numbers.map((n, i) => <Number key={i} n={n}/>)}
+        </Section>
     );
 }
 

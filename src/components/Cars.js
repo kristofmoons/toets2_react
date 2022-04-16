@@ -52,8 +52,9 @@ function Car(props) {
 export function Cars(props) {
     const {cars, title} = props
     return (
-        <Section title={title}
-                 content={cars.map(c => <Car car={c}/>)}/>
+        <Section title={title}>
+            {cars.map(c => <Car car={c}/>)}
+        </Section>
     );
 }
 
