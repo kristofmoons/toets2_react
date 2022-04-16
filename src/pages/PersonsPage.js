@@ -1,6 +1,8 @@
 import * as PropTypes from "prop-types";
 import {Persons} from "../components/Persons";
 import {Numbers} from "../components/Numbers";
+import {Cities} from "../components/Cities";
+import {citiesFromPersonData} from "../utilities/person_utilities";
 
 Persons.propTypes = {title: PropTypes.string};
 
@@ -9,10 +11,12 @@ export function PersonsPage(props) {
     return (
         <div className="mx-3">
             <Persons persons={persons} title="alle personen"/>
-            <Persons persons={[...persons].sort((pl, pr) => pr.age-pl.age)} title="alle personen volgens leeftijd"/>
+            <Persons persons={[...persons].sort((pl, pr) => pr.age - pl.age)} title="alle personen volgens leeftijd"/>
             <Numbers numbers={persons.map(p => p.age)} title="leeftijden"/>
-            <Numbers numbers={[...new Set(persons.map(p => p.age))].sort((nl,nr)=>nr-nl)} title="unieke leeftijden gesorteerd"/>
-
+            <Numbers numbers={[...new Set(persons.map(p => p.age))].sort((nl, nr) => nr - nl)}
+                     title="unieke leeftijden gesorteerd"/>
+            <Cities cities={[{name: "Antwerpen", numberOfPersons: 100}, {name: "Brussel", numberOfPersons: 200}]} title="city test"/>
+            <Cities cities={citiesFromPersonData(persons)} title="steden van alle personen"/>
         </div>
     );
 }
