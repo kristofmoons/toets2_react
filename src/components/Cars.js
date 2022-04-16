@@ -36,7 +36,7 @@ function CarColor(props) {
 function Car(props) {
     const {car} = props;
     return (
-        <Col xs={12} sm={6} md={4} lg={3} xl={2} xxl={1}>
+        <Col xs={12} sm={6} md={4} lg={3} xl={2}>
             <MyCard title={car.name}>
                 {car.brand && <div>merk: {car.brand}</div>}
                 {car.type && <div>type: {car.type}</div>}
@@ -45,6 +45,16 @@ function Car(props) {
             </MyCard>
         </Col>
     );
+}
+
+Car.propTypes = {
+    car: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        brand: PropTypes.string,
+        type: PropTypes.string,
+        note: PropTypes.string,
+        color: PropTypes.string
+    })
 }
 
 export function Cars(props) {
@@ -60,3 +70,4 @@ Cars.propTypes = {
     cars: PropTypes.array,
     title: PropTypes.string
 };
+
