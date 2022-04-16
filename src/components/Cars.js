@@ -1,6 +1,36 @@
 import PropTypes from "prop-types";
 import {Card, Col, Container, Row} from "react-bootstrap";
 
+const COLORS_CAR_CSS = [
+    {nameInCar: "blauw", backGroundColorInCss: "blue", colorInCss: "white"},
+    {nameInCar: "geel", backGroundColorInCss: "yellow"},
+    {nameInCar: "zwart", backGroundColorInCss: "black", colorInCss: "white"},
+    {nameInCar: "wit", backGroundColorInCss: "white"},
+    {nameInCar: "rood", backGroundColorInCss: "red", colorInCss: "white"},
+    {nameInCar: "grijs", backGroundColorInCss: "grey", colorInCss: "white"},
+    {nameInCar: "groen", backGroundColorInCss: "green", colorInCss: "white"},
+];
+
+//merk op: dit is een gewone functie, geen React-Component
+function styleColor(color) {
+    const colorCarCss = COLORS_CAR_CSS.find(c => c.nameInCar === color);
+    if (!colorCarCss) return;
+    return {
+        backgroundColor: colorCarCss.backGroundColorInCss,
+        color: colorCarCss.colorInCss,
+        margin: "0.5em"
+    };
+}
+
+function CarColor(props) {
+    const {color} = props;
+
+    if (!color) return null;
+    return <div style={styleColor(color)}>
+        kleur: {color} &nbsp;
+    </div>;
+}
+
 function Car(props) {
     const {car} = props;
     return (
@@ -11,7 +41,7 @@ function Car(props) {
                 <h5>{car.name}</h5>
                 {car.brand && <div>merk: {car.brand}</div>}
                 {car.type && <div>type: {car.type}</div>}
-                {car.color && <div>kleur: {car.color}</div>}
+                <CarColor color={car.color}/>
             </Card>
         </Col>
     );
