@@ -9,9 +9,9 @@ function Car(props) {
              className={"text-center "}>
             <Card className="m-2 p-2 shadow-sm">
                 <h5>{car.name}</h5>
-                <div>merk: {car.brand}</div>
-                <div>type: {car.type}</div>
-                <div>kleur: {car.color}</div>
+                {car.brand && <div>merk: {car.brand}</div>}
+                {car.type && <div>type: {car.type}</div>}
+                {car.color && <div>kleur: {car.color}</div>}
             </Card>
         </Col>
     );
