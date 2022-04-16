@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import {Card, Col, Container, Row} from "react-bootstrap";
+import {Card, Col} from "react-bootstrap";
+import {Section} from "./Section";
 
 const COLORS_CAR_CSS = [
     {nameInCar: "blauw", backGroundColorInCss: "blue", colorInCss: "white"},
@@ -51,14 +52,8 @@ function Car(props) {
 export function Cars(props) {
     const {cars, title} = props
     return (
-        <div className="mt-3 rounded shadow-sm" style={{backgroundColor: "lavender"}}>
-            <h2 className="text-center">{title}</h2>
-            <Container>
-                <Row>
-                    {cars.map(c => <Car car={c}/>)}
-                </Row>
-            </Container>
-        </div>
+        <Section title={title}
+                 content={cars.map(c => <Car car={c}/>)}/>
     );
 }
 
