@@ -6,6 +6,7 @@ export function NumbersPage(props) {
     return (
         <div className="mx-3" >
             <Numbers numbers={numbers} title="alle getallen"/>
+            <Numbers numbers={numbers.filter(n=>n>6)} title="getallen>6"/>
         </div>
     );
 }
