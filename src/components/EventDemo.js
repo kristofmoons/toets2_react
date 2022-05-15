@@ -1,4 +1,5 @@
 import {Section} from "./Section";
+import {Button} from "react-bootstrap";
 
 export function EventDemo() {
     return <Section title="events">
@@ -7,5 +8,10 @@ export function EventDemo() {
                     alert("button is clicked");
                 }}>click me please!
         </button>
+        <Button className="m-2"
+                onClick={() => {
+                    alert("bootstrap button is clicked");
+                }}>click me please!
+        </Button>
     </Section>;
 }
