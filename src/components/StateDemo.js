@@ -15,6 +15,7 @@ export function StateDemo() {
             <MyButton onClick={() => setDemoValue(184)}> SET 184 </MyButton>
         </div>
         <Counter name="counter1"/>
+        <Counter name="counter2"/>
     </Section>;
 }
 
