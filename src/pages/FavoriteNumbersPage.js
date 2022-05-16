@@ -8,6 +8,7 @@ export function FavoriteNumbersPage(props) {
         <div className="mx-3">
             <Numbers numbers={numbers} title="alle getallen"
                      isInitiallyOpen={true}
+                     markedNumber={favorite}
                      onSelectNumber={n => setFavorite(n)}/>
             <div>Mijn favoriete getal is {favorite ?? "(nog niet gekozen)"}</div>
         </div>
