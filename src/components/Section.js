@@ -2,6 +2,17 @@ import {Button, Container, Row} from "react-bootstrap";
 import PropTypes from "prop-types";
 import {useState} from "react";
 
+function OpenCloseButton(props) {
+    const {isOpen, onChangeIsOpen} = props;
+
+    return <Button
+        variant="outline-primary" size="sm"
+        className="ms-4"
+        onClick={() => onChangeIsOpen(!isOpen)}>
+        {isOpen ? "-" : "+"}
+    </Button>;
+}
+
 function SectionContent(props) {
     const {isOpen, children} = props;
     if (!isOpen) return;
@@ -20,10 +31,9 @@ export function Section(props) {
     return (
         <div className="my-3 p-1 rounded shadow-sm" style={{backgroundColor: "lavender"}}>
             <h2 className="text-center">{title}
-                <Button variant="outline-primary" size="sm" className="ms-2 mt-1"
-                        onClick={() => {
-                            alert("klik klik klik");
-                        }}>klik</Button>
+                <OpenCloseButton
+                    isOpen={isOpen}
+                    onChangeIsOpen={() => setIsOpen(!isOpen)}/>
             </h2>
             <SectionContent isOpen={isOpen}>{children}</SectionContent>
         </div>
