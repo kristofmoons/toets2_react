@@ -1,7 +1,7 @@
 import {Numbers} from "../components/Numbers";
 import {useState} from "react";
 
-export function FavoriteNumbersPage(props) {
+export function FavoriteNumberPage(props) {
     const {numbers} = props;
     const [favorite, setFavorite] = useState();
     return (

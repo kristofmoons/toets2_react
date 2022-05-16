@@ -10,7 +10,7 @@ import {NumbersPage} from "./pages/NumbersPage";
 import {CarsPage} from "./pages/CarsPage";
 import {PersonsPage} from "./pages/PersonsPage";
 import {EventAndStatePage} from "./pages/EventAndStatePage";
-import {FavoriteNumbersPage} from "./pages/FavoriteNumbersPage";
+import {FavoriteNumberPage} from "./pages/FavoriteNumberPage";
 
 function App() {
     return (
@@ -43,7 +43,7 @@ function App() {
                 <EventAndStatePage/>
             </TabPanel>
             <TabPanel>
-                <FavoriteNumbersPage numbers={NUMBER_DATA}/>
+                <FavoriteNumberPage numbers={NUMBER_DATA}/>
             </TabPanel>
         </Tabs>
     );
