@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export function Section(props) {
     const {title, children} = props;
     return (
-        <div className="mt-3 rounded shadow-sm" style={{backgroundColor: "lavender"}}>
+        <div className="my-3 p-1 rounded shadow-sm" style={{backgroundColor: "lavender"}}>
             <h2 className="text-center">{title}
                 <Button variant="outline-primary" size="sm" className="ms-2 mt-1"
                         onClick={() => {
