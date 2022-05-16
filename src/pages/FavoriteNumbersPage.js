@@ -6,7 +6,9 @@ export function FavoriteNumbersPage(props) {
     const [favorite, setFavorite] = useState();
     return (
         <div className="mx-3">
-            <Numbers numbers={numbers} title="alle getallen" isInitiallyOpen={true}/>
+            <Numbers numbers={numbers} title="alle getallen"
+                     isInitiallyOpen={true}
+                     onSelectNumber={n => setFavorite(n)}/>
             <div>Mijn favoriete getal is {favorite ?? "(nog niet gekozen)"}</div>
         </div>
     );

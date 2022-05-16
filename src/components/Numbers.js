@@ -4,24 +4,26 @@ import {Section} from "./Section";
 import {MyCard} from "./MyCard";
 
 function Number(props) {
-    const {number} = props;
+    const {number, onSelect} = props;
     return (
         <Col xs={4} sm={3} md={2} xxl={1}>
-            <MyCard>{number}</MyCard>
+            <MyCard onSelect={() => onSelect(number)}>{number}</MyCard>
         </Col>
     );
 }
 
 export function Numbers(props) {
-    const {numbers, title, isInitiallyOpen} = props
+    const {numbers, title, isInitiallyOpen, onSelectNumber} = props
     return (
         <Section title={title} isInitiallyOpen={isInitiallyOpen}>
-            {numbers.map((n, i) => <Number key={i} number={n}/>)}
+            {numbers.map((n, i) => <Number key={i} number={n} onSelect={onSelectNumber}/>)}
         </Section>
     );
 }
 
 Numbers.propTypes = {
     numbers: PropTypes.array,
-    title: PropTypes.string
+    title: PropTypes.string,
+    isInitiallyOpen: PropTypes.bool,
+    onSelectNumber: PropTypes.func
 };
