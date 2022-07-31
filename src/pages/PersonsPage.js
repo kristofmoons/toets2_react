@@ -10,7 +10,7 @@ export function PersonsPage(props) {
     const {persons} = props;
     return (
         <div className="mx-3">
-            <Persons persons={persons} title="alle personen"/>
+            <Persons persons={persons} title="alle personen" isInitiallyOpen={true}/>
             <Persons persons={[...persons].sort((pl, pr) => pr.age - pl.age)} title="alle personen volgens leeftijd"/>
             <Numbers numbers={persons.map(p => p.age)} title="leeftijden"/>
             <Numbers numbers={[...new Set(persons.map(p => p.age))].sort((nl, nr) => nr - nl)}

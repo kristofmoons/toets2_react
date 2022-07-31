@@ -26,8 +26,8 @@ function SectionContent(props) {
 }
 
 export function Section(props) {
-    const {title, children} = props;
-    const [isOpen, setIsOpen] = useState(false);
+    const {title, children, isInitiallyOpen} = props;
+    const [isOpen, setIsOpen] = useState(isInitiallyOpen);
     return (
         <div className="my-3 p-1 rounded shadow-sm" style={{backgroundColor: "lavender"}}>
             <h2 className="text-center">{title}

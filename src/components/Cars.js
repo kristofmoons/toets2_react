@@ -58,9 +58,9 @@ Car.propTypes = {
 }
 
 export function Cars(props) {
-    const {cars, title} = props
+    const {cars, title, isInitiallyOpen} = props
     return (
-        <Section title={title}>
+        <Section title={title} isInitiallyOpen={isInitiallyOpen}>
             {cars.map(c => <Car key={c.id} car={c}/>)}
         </Section>
     );

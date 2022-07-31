@@ -1,8 +1,9 @@
 import {Section} from "./Section";
 import {Button, Col} from "react-bootstrap";
 
-export function EventDemo() {
-    return <Section title="events">
+export function EventDemo(props) {
+    const {isInitiallyOpen} = props;
+    return <Section title="events" isInitiallyOpen={isInitiallyOpen}>
         <Col xs={12}>
             <button className="m-2"
                     onClick={() => {
