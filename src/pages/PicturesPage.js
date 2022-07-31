@@ -48,12 +48,10 @@ function Picture(props) {
 }
 
 export function PicturesPage() {
-    const picture = PICTURES_DATA[0];
-
     return (
         <div style={{margin: "0 2vw"}}>
             <h1>Pictures</h1>
-            <Picture picture={picture}/>
+            {PICTURES_DATA.map(p => <Picture key={p.id} picture={p}/>)}
         </div>
     );
 }
