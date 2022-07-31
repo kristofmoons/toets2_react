@@ -35,18 +35,25 @@ const PICTURES_DATA = [
     },
 ];
 
+function Picture(props) {
+    const {picture} = props;
+
+    return <>
+        <img src={`images/${picture.name}`}
+             alt={`${picture.name}`}
+             width="100%"
+             style={{margin: "2vw auto 0 auto"}}/>
+        by <a href={picture.credit}> {picture.author}</a>
+    </>;
+}
+
 export function PicturesPage() {
     const picture = PICTURES_DATA[0];
 
     return (
         <div style={{margin: "0 2vw"}}>
             <h1>Pictures</h1>
-            <img src={`images/${picture.name}`}
-                 alt={`${picture.name}`}
-                 width="100%"
-                 style={{margin: "2vw auto 0 auto"}}/>
-            by <a href={picture.credit}>{picture.author}</a>
-
+            <Picture picture={picture}/>
         </div>
     );
 }
