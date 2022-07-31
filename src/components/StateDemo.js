@@ -29,6 +29,16 @@ function DemoValueReadOnly(props) {
     );
 }
 
+function DemoValueIncrement(props) {
+    const {demoValue, onDemoValueChange} = props;
+
+    return (
+        <div className="my-3 py-2 border border-info">
+            <MyButton onClick={() => onDemoValueChange(demoValue + 1)}> demoValue increment</MyButton>
+        </div>
+    );
+}
+
 export function StateDemo() {
     const [demoValue, setDemoValue] = useState(0);
 
@@ -38,6 +48,7 @@ export function StateDemo() {
         <Counter name="counter2"/>
         <OnOffDemo/>
         <DemoValueReadOnly demoValue={demoValue}/>
+        <DemoValueIncrement demoValue={demoValue} onDemoValueChange={setDemoValue}/>
     </Section>;
 }
 
