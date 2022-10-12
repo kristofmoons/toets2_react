@@ -7,7 +7,7 @@ function Number(props) {
     const {number, onSelect, isMarked} = props;
     return (
         <Col xs={4} sm={3} md={2} xxl={1}>
-            <MyCard onSelect={() => onSelect(number)} isMarked={isMarked}>{number}</MyCard>
+            <MyCard onSelect={onSelect && (() => onSelect(number))} isMarked={isMarked}>{number}</MyCard>
         </Col>
     );
 }
