@@ -3,7 +3,7 @@ import {Form} from "react-bootstrap";
 
 
 export function InputPage() {
-    const [testInput, setTestInput] = useState();
+    const [testInput, setTestInput] = useState("");
     return (
         <div className="mx-3">
             <div className="m-3">
