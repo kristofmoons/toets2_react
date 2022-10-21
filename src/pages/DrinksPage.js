@@ -24,7 +24,7 @@ export function DrinksPage(props) {
             <Drinks drinks={drinks} title="DrankenKaart" isInitiallyOpen={true} />
             {/*<Drinks drinks={drinks.filter(d => d.warm===false)} title="DrankenKaart (koud)" isInitiallyOpen={true} style={warm !==1? {  visibility:"hidden"}:{  visibility:"hidden"}}/>*/}
             {/*<Drinks drinks={drinks.filter(d => d.warm===true)} title="DrankenKaart (warm)" isInitiallyOpen={true} style={warm !==2? {  visibility:"hidden"}:{  visibility:"hidden"}}/>*/}
-            <Orders drinks={drinks}/>
+
 
 
 
