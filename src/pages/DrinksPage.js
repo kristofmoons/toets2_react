@@ -1,12 +1,12 @@
 import {Drinks} from "../components/Drinks";
 import {Form} from "react-bootstrap";
 import {useState} from "react";
-import {Orders} from "../components/Orders";
 
 
 export function DrinksPage(props) {
     const {drinks} = props;
     const [warm, setWarm] = useState(0);
+
     return (
         <div className="mx-3">
             <div className="m-3">
@@ -20,10 +20,13 @@ export function DrinksPage(props) {
                                 type="radio" id="warm-3" onChange={() => setWarm(2)}/>
                 </Form>
             </div>
+            {warm ===0? <Drinks drinks={drinks} title="DrankenKaart" isInitiallyOpen={true} />: <div> </div> }
 
-            <Drinks drinks={drinks} title="DrankenKaart" isInitiallyOpen={true} />
-            {/*<Drinks drinks={drinks.filter(d => d.warm===false)} title="DrankenKaart (koud)" isInitiallyOpen={true} style={warm !==1? {  visibility:"hidden"}:{  visibility:"hidden"}}/>*/}
-            {/*<Drinks drinks={drinks.filter(d => d.warm===true)} title="DrankenKaart (warm)" isInitiallyOpen={true} style={warm !==2? {  visibility:"hidden"}:{  visibility:"hidden"}}/>*/}
+            {warm ===1?   <Drinks drinks={drinks.filter(d => d.warm===false)} title="DrankenKaart (koud)" isInitiallyOpen={true}/>:  <div> </div>  }
+
+            {warm ===2?    <Drinks drinks={drinks.filter(d => d.warm===true)} title="DrankenKaart (warm)" isInitiallyOpen={true}/>: <div> </div>  }
+
+
 
 
 
