@@ -6,7 +6,7 @@ export function Orders(props) {
     return (
         <div className="mx-3">
 
-            <div>Volgende bestelling werd genoteerd: {order ?? "(nog niet gekozen)"}</div>
+            <div>{order ?? ""}</div>
         </div>
     );
 }
