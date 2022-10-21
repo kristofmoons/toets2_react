@@ -12,12 +12,15 @@ ATTENTION!!!!
 */
 
 export const PRODUCTS_DATA = [
-    {name: "cola", price: 1 },
+    {name: "verse muntthee", price: 2.5, warm: true},
+    {name: "tonic", price: 2, warm: false},
     {name: "water", price: 1, note: "plat of bruisend"},
-    {name: "bier", price: 1, size: 25},
-    {name: "bier groot", price: 1, size: 33},
-    {name: "wijn", price: 2, note:"rood, wit of rosé"},
-    {name: "cava", price: 3},
+    {name: "limonade", price: 1, note: "geel of wit"},
+    {name: "espresso", price: 2.5, warm: true},
+    {name: "latte machiato", price: 3, warm: true},
+    {name: "cola", price: 1 },
+    {name: "gember-citroen", price: 2.5, warm: true},
+    {name: "icetea", price: 1.5},
 ];
 
 
@@ -63,3 +66,4 @@ export const PERSON_DATA = [
     {id: 12, name: "Leen", age: 21, city: "Katelijne"},
     {id: 13, name: "Lieve", age: 20, city: "Mechelen"},
 ];
+
