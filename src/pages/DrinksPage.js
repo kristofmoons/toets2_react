@@ -22,7 +22,7 @@ export function DrinksPage(props) {
             </div>
             {warm ===0? <Drinks drinks={drinks} title="DrankenKaart" isInitiallyOpen={true} />: <div> </div> }
 
-            {warm ===1?   <Drinks drinks={drinks.filter(d => d.warm===false)} title="DrankenKaart (koud)" isInitiallyOpen={true}/>:  <div> </div>  }
+            {warm ===1?   <Drinks drinks={drinks.filter(d => d.warm!==true)} title="DrankenKaart (koud)" isInitiallyOpen={true}/>:  <div> </div>  }
 
             {warm ===2?    <Drinks drinks={drinks.filter(d => d.warm===true)} title="DrankenKaart (warm)" isInitiallyOpen={true}/>: <div> </div>  }
 
