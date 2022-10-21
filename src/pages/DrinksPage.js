@@ -1,6 +1,7 @@
 import {Drinks} from "../components/Drinks";
 import {Form} from "react-bootstrap";
 import {useState} from "react";
+import {Orders} from "../components/Orders";
 
 
 export function DrinksPage(props) {
@@ -20,9 +21,10 @@ export function DrinksPage(props) {
                 </Form>
             </div>
 
-            <Drinks drinks={drinks} title="DrankenKaart" isInitiallyOpen={true}/>
-
-        }
+            <Drinks drinks={drinks} title="DrankenKaart" isInitiallyOpen={true} />
+            {/*<Drinks drinks={drinks.filter(d => d.warm===false)} title="DrankenKaart (koud)" isInitiallyOpen={true} style={warm !==1? {  visibility:"hidden"}:{  visibility:"hidden"}}/>*/}
+            {/*<Drinks drinks={drinks.filter(d => d.warm===true)} title="DrankenKaart (warm)" isInitiallyOpen={true} style={warm !==2? {  visibility:"hidden"}:{  visibility:"hidden"}}/>*/}
+            <Orders drinks={drinks}/>
 
 
 
